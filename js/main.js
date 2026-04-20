@@ -81,8 +81,11 @@
   /* --------- Anchor smoothing ---------- */
   const getTargetTop = (target) => {
     const headerH = header ? header.getBoundingClientRect().height : 0;
-    const rectTop = target.getBoundingClientRect().top + window.scrollY;
-    return Math.max(0, rectTop - headerH - 12);
+    // Si la section a un .section-head, on cale dessus (évite le vide
+    // laissé par le padding-block de la section).
+    const anchor = target.querySelector('.section-head') || target;
+    const rectTop = anchor.getBoundingClientRect().top + window.scrollY;
+    return Math.max(0, rectTop - headerH - 24);
   };
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
