@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://noventis.design/sitemap.xml
+Sitemap: https://noventisdesign.com/sitemap.xml
