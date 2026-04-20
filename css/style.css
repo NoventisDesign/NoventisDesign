@@ -109,11 +109,13 @@ a { color: inherit; text-decoration: none; }
 
 html {
   background: var(--noir);
-  scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 12px);
 }
 
 section[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
+
+/* Smooth natif uniquement en fallback (si Lenis/JS indispo) */
+html.no-js { scroll-behavior: smooth; }
 body {
   font-family: var(--font-body);
   font-size: var(--fs-base);

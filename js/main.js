@@ -79,9 +79,10 @@
   }
 
   /* --------- Anchor smoothing ---------- */
-  const getHeaderOffset = () => {
-    const h = header ? header.getBoundingClientRect().height : 0;
-    return -(h + 12);
+  const getTargetTop = (target) => {
+    const headerH = header ? header.getBoundingClientRect().height : 0;
+    const rectTop = target.getBoundingClientRect().top + window.scrollY;
+    return Math.max(0, rectTop - headerH - 12);
   };
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
@@ -90,10 +91,10 @@
       const target = document.querySelector(href);
       if (!target) return;
       e.preventDefault();
+      const top = getTargetTop(target);
       if (lenis) {
-        lenis.scrollTo(target, { offset: getHeaderOffset(), duration: 0.8 });
+        lenis.scrollTo(top, { duration: 0.8, lock: true, immediate: false });
       } else {
-        const top = target.getBoundingClientRect().top + window.scrollY + getHeaderOffset();
         window.scrollTo({
           top,
           behavior: prefersReducedMotion ? 'auto' : 'smooth',
