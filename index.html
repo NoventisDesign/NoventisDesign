@@ -699,8 +699,10 @@
         </div>
 
         <form class="form glass" data-form novalidate>
-          <!-- Honeypot anti-spam : invisible aux humains, rempli par les bots → FormSubmit jette -->
-          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+          <!-- Web3Forms : clé d'accès publique (liée à contact@noventisdesign.com) -->
+          <input type="hidden" name="access_key" value="81d8d080-b2c6-4e07-b554-6b97f992902e" />
+          <!-- Honeypot anti-spam Web3Forms : rempli par les bots → message rejeté -->
+          <input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
           <div class="field">
             <label for="f-name">Votre nom</label>
             <input id="f-name" name="name" type="text" autocomplete="name" required />

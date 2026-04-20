@@ -358,8 +358,8 @@
     }
   }
 
-  /* --------- Form — envoi réel via FormSubmit.co AJAX ---------- */
-  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/55f970ef7b6272195eacfd3e3fb9d7f0';
+  /* --------- Form — envoi réel via Web3Forms ---------- */
+  const FORM_ENDPOINT = 'https://api.web3forms.com/submit';
   const form = document.querySelector('[data-form]');
   if (form) {
     const status = form.querySelector('[data-form-status]');
@@ -392,10 +392,9 @@
       try {
         const fd = new FormData(form);
         const projectType = form.querySelector('#f-subject')?.selectedOptions[0]?.text || 'Contact';
-        fd.append('_subject', `Nouveau projet — ${projectType} · ${name.value.trim()}`);
-        fd.append('_captcha', 'false');
-        fd.append('_template', 'table');
-        fd.append('_autoresponse', `Bonjour ${name.value.trim()},\n\nMerci pour votre message — nous revenons vers vous sous 24 h ouvrées.\n\nNoventis Design`);
+        fd.append('subject', `Nouveau projet — ${projectType} · ${name.value.trim()}`);
+        fd.append('from_name', `${name.value.trim()} (via noventisdesign.com)`);
+        fd.append('replyto', email.value.trim());
 
         const res = await fetch(FORM_ENDPOINT, {
           method: 'POST',
@@ -405,7 +404,7 @@
 
         const data = await res.json().catch(() => ({}));
 
-        if (res.ok && data.success !== 'false') {
+        if (res.ok && data.success === true) {
           if (status) status.textContent = 'Message envoyé. Réponse sous 24 h ouvrées.';
           form.reset();
         } else {
