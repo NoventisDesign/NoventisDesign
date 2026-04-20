@@ -17,8 +17,8 @@
   let lenis = null;
   if (Lenis && !prefersReducedMotion) {
     lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 0.9,
+      easing: (t) => 1 - Math.pow(1 - t, 4),
       smoothWheel: true,
       wheelMultiplier: 1.0,
       touchMultiplier: 1.4,
@@ -36,14 +36,21 @@
     }
   }
 
-  /* --------- Header scrolled state ---------- */
+  /* --------- Header scrolled state + dynamic height ---------- */
   const header = document.querySelector('[data-header]');
+  const updateHeaderHeight = () => {
+    if (!header) return;
+    const h = header.getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--header-h', `${Math.round(h)}px`);
+  };
   const onScroll = () => {
     const y = window.scrollY || window.pageYOffset;
     header && header.classList.toggle('is-scrolled', y > 24);
+    updateHeaderHeight();
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', updateHeaderHeight, { passive: true });
 
   /* --------- Mobile menu ---------- */
   const burger = document.querySelector('[data-burger]');
@@ -72,7 +79,10 @@
   }
 
   /* --------- Anchor smoothing ---------- */
-  const SCROLL_OFFSET = -60;
+  const getHeaderOffset = () => {
+    const h = header ? header.getBoundingClientRect().height : 0;
+    return -(h + 12);
+  };
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
       const href = a.getAttribute('href');
@@ -81,11 +91,12 @@
       if (!target) return;
       e.preventDefault();
       if (lenis) {
-        lenis.scrollTo(target, { offset: SCROLL_OFFSET, duration: 1.2 });
+        lenis.scrollTo(target, { offset: getHeaderOffset(), duration: 0.8 });
       } else {
-        target.scrollIntoView({
+        const top = target.getBoundingClientRect().top + window.scrollY + getHeaderOffset();
+        window.scrollTo({
+          top,
           behavior: prefersReducedMotion ? 'auto' : 'smooth',
-          block: 'start',
         });
       }
     });
