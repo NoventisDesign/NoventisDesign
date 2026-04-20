@@ -1610,8 +1610,8 @@ section {
   font-weight: 500;
 }
 .contact__info a:hover { color: var(--cyan); }
-.contact__info--social { grid-template-columns: 1fr !important; }
-.contact__social { display: inline-flex; align-items: center; gap: 8px; }
+.contact__info-stack { display: flex; flex-direction: column; gap: 4px; }
+.contact__social { display: inline-flex; align-items: center; gap: 8px; width: fit-content; }
 .contact__social svg { flex-shrink: 0; }
 .contact__socials { display: flex; gap: var(--space-4); }
 
