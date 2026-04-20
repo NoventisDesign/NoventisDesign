@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <title>Politique de confidentialité — Noventis Design</title>
+  <meta name="description" content="Politique de confidentialité de Noventis Design — traitement des données, cookies, droits RGPD, contact." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://noventis.design/confidentialite.html" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="grad-nv" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#6c3de8"/>
+        <stop offset="50%" stop-color="#8b5fff"/>
+        <stop offset="100%" stop-color="#00d4ff"/>
+      </linearGradient>
+      <linearGradient id="grad-silver" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+        <stop offset="50%" stop-color="#c8d6e5" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0.08"/>
+      </linearGradient>
+      <linearGradient id="grad-silver-wordmark" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"  stop-color="#ffffff"/>
+        <stop offset="35%" stop-color="#eef3f8"/>
+        <stop offset="48%" stop-color="#c8d6e5"/>
+        <stop offset="55%" stop-color="#dde4ec"/>
+        <stop offset="100%" stop-color="#8b98a8"/>
+      </linearGradient>
+      <filter id="glow-nv" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="1.5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+  </svg>
+
+  <style>
+    .legal-main { padding: clamp(140px, 16vw, 200px) 0 clamp(80px, 10vw, 140px); position: relative; z-index: 2; }
+    .legal-wrap { max-width: 880px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
+    .legal-back { display: inline-flex; align-items: center; gap: 10px; font-family: "DM Sans", sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--argent-mute); text-decoration: none; margin-bottom: var(--space-6); transition: color 0.3s ease; }
+    .legal-back:hover, .legal-back:focus-visible { color: var(--cyan); }
+    .legal-back::before { content: ""; width: 24px; height: 1px; background: linear-gradient(90deg, var(--violet), var(--cyan)); }
+    .legal-hero { margin-bottom: var(--space-8); }
+    .legal-eyebrow { font-family: "DM Sans", sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.32em; text-transform: uppercase; color: var(--cyan); display: inline-flex; align-items: center; gap: 12px; margin-bottom: var(--space-4); }
+    .legal-eyebrow__mark { width: 6px; height: 6px; border-radius: 50%; background: linear-gradient(135deg, var(--violet), var(--cyan)); box-shadow: 0 0 12px rgba(0, 212, 255, 0.6); }
+    .legal-hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: clamp(44px, 7.5vw, 84px); line-height: 1; letter-spacing: -0.02em; color: #f4f6fb; margin: 0 0 var(--space-4); }
+    .legal-hero h1 em { font-style: italic; font-weight: 500; background: linear-gradient(120deg, var(--violet-bright) 0%, var(--cyan) 100%); background-size: 200% 200%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradient-shift 8s ease-in-out infinite; }
+    .legal-hero__meta { font-family: "DM Sans", sans-serif; font-size: 13px; color: var(--argent-mute); letter-spacing: 0.06em; }
+    .legal-content { font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif; font-size: 15px; line-height: 1.75; color: var(--argent-dim); }
+    .legal-content section + section { margin-top: var(--space-7); }
+    .legal-content h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: clamp(26px, 3vw, 34px); line-height: 1.1; letter-spacing: -0.01em; color: var(--argent); margin: 0 0 var(--space-4); display: flex; align-items: baseline; gap: 14px; }
+    .legal-content h2 .legal-num { font-family: "DM Sans", sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; color: var(--cyan); text-transform: uppercase; white-space: nowrap; }
+    .legal-content h3 { font-family: "DM Sans", sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--argent-soft); margin: var(--space-5) 0 var(--space-3); }
+    .legal-content p { margin: 0 0 var(--space-3); }
+    .legal-content p strong { color: var(--argent); font-weight: 600; }
+    .legal-content ul { list-style: none; padding: 0; margin: 0 0 var(--space-4); }
+    .legal-content li { position: relative; padding-left: 22px; margin-bottom: 10px; }
+    .legal-content li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 10px; height: 1px; background: linear-gradient(90deg, var(--violet), var(--cyan)); }
+    .legal-content a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid rgba(0, 212, 255, 0.3); transition: border-color 0.25s ease; }
+    .legal-content a:hover, .legal-content a:focus-visible { border-bottom-color: var(--cyan); }
+    .legal-callout { margin: var(--space-5) 0; padding: var(--space-4) var(--space-5); border: 1px solid rgba(0, 212, 255, 0.22); border-radius: 14px; background: linear-gradient(135deg, rgba(108, 61, 232, 0.08) 0%, rgba(0, 212, 255, 0.04) 100%); position: relative; }
+    .legal-callout::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 14px 0 0 14px; background: linear-gradient(180deg, var(--violet), var(--cyan)); }
+    .legal-callout p:last-child { margin-bottom: 0; }
+    .legal-callout__label { display: inline-block; font-family: "DM Sans", sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--cyan); margin-bottom: 8px; }
+    .legal-placeholder { display: inline-block; padding: 1px 8px; border-radius: 4px; background: rgba(108, 61, 232, 0.10); border: 1px dashed rgba(139, 95, 255, 0.35); color: var(--violet-bright); font-size: 13px; font-weight: 500; }
+    .legal-table { width: 100%; border-collapse: collapse; margin: var(--space-4) 0; font-size: 14px; }
+    .legal-table th, .legal-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid rgba(230, 237, 243, 0.08); vertical-align: top; }
+    .legal-table th { color: var(--argent); font-weight: 600; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .legal-table tr:last-child td { border-bottom: none; }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#legal-main">Aller au contenu</a>
+  <canvas class="scene" data-scene aria-hidden="true"></canvas>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="wrap site-header__inner">
+      <a href="index.html" class="brand" aria-label="Noventis Design — accueil">
+        <svg class="logo-svg" viewBox="0 0 210 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g transform="translate(2, 4)">
+            <rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="url(#grad-nv)" stroke-width="1.3" opacity="0.95"/>
+            <path d="M 8 23 L 8 9 L 24 23 L 24 9" fill="none" stroke="url(#grad-nv)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow-nv)"/>
+            <path d="M 8 23 L 8 9 L 24 23 L 24 9" fill="none" stroke="url(#grad-silver)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+            <circle cx="28" cy="7" r="1.2" fill="url(#grad-nv)"/>
+          </g>
+          <g transform="translate(44, 0)">
+            <text x="0" y="20" font-family="Space Grotesk, Inter, sans-serif" font-size="17" font-weight="500" letter-spacing="-0.4" fill="url(#grad-silver-wordmark)">Noventis</text>
+            <text x="0" y="20" font-family="Space Grotesk, Inter, sans-serif" font-size="17" font-weight="500" letter-spacing="-0.4" fill="#ffffff" opacity="0.18">Noventis</text>
+            <text x="32" y="33" font-family="Space Grotesk, Inter, sans-serif" font-size="8.5" font-weight="500" letter-spacing="2.2" text-anchor="middle" fill="#a8b0c0" opacity="0.9">design</text>
+          </g>
+        </svg>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#creations">Créations</a></li>
+          <li><a href="index.html#methode">Méthode</a></li>
+          <li><a href="index.html#tarifs">Tarifs</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#contact" class="btn btn--primary btn--sm" data-magnetic>
+        <span>Démarrer</span>
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M2 8h12M9 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" data-burger>
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu glass" data-menu aria-hidden="true">
+    <nav class="menu__nav" aria-label="Menu mobile">
+      <ul>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#creations">Créations</a></li>
+        <li><a href="index.html#methode">Méthode</a></li>
+        <li><a href="index.html#tarifs">Tarifs</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="menu__foot">
+      <a href="mailto:contact@noventisdesign.com">contact@noventisdesign.com</a>
+      <a href="tel:+33670020095">06 70 02 00 95</a>
+    </div>
+  </div>
+
+  <main class="legal-main" id="legal-main">
+    <div class="legal-wrap">
+      <a href="index.html" class="legal-back">Retour à l'accueil</a>
+
+      <header class="legal-hero">
+        <p class="legal-eyebrow"><span class="legal-eyebrow__mark"></span> Protection des données</p>
+        <h1>Politique de <em>confidentialité.</em></h1>
+        <p class="legal-hero__meta">Dernière mise à jour : 20 avril 2026 — Conforme RGPD (UE 2016/679)</p>
+      </header>
+
+      <article class="legal-content">
+
+        <section>
+          <h2><span class="legal-num">01</span> Préambule</h2>
+          <p>Noventis Design attache une importance particulière au respect de votre vie privée et à la protection de vos données personnelles. La présente politique a pour objet de vous informer, en toute transparence, sur la manière dont vos données sont collectées, traitées et conservées lorsque vous visitez le site <strong>noventisdesign.com</strong> ou entrez en contact avec nous.</p>
+          <p>Elle est établie conformément au Règlement (UE) 2016/679 du 27 avril 2016 (« <strong>RGPD</strong> ») et à la loi n° 78-17 du 6 janvier 1978 dite « Informatique et Libertés » modifiée.</p>
+        </section>
+
+        <section>
+          <h2><span class="legal-num">02</span> Responsable de traitement</h2>
+          <p>Le responsable de traitement des données collectées via le site est&nbsp;:</p>
+          <ul>
+            <li><strong>Noventis Design</strong> — Yazid Lekbiri, micro-entrepreneur</li>
+            <li>SIRET : 512 625 682 00020</li>
+            <li>Adresse : Résidence Les Sylves, 5 rue Chanoine Rance-Bourrey, 06100 Nice</li>
+            <li>E-mail : <a href="mailto:contact@noventisdesign.com">contact@noventisdesign.com</a></li>
+            <li>Téléphone : <a href="tel:+33670020095">06 70 02 00 95</a></li>
+          </ul>
+          <p>Pour toute question relative au traitement de vos données ou pour exercer vos droits, vous pouvez nous contacter directement à l'adresse ci-dessus.</p>
+        </section>
+
+        <section>
+          <h2><span class="legal-num">03</span> Données collectées</h2>
+          <p>Nous collectons uniquement les données <strong>strictement nécessaires</strong> à l'accomplissement des finalités décrites à l'article 4. Aucune donnée sensible (santé, opinions politiques, origine, etc.) n'est collectée.</p>
+
+          <h3>Données issues du formulaire de contact</h3>
+          <ul>
+            <li>Nom et prénom</li>
+            <li>Adresse e-mail</li>
+            <li>Type de projet (liste de choix)</li>
+            <li>Contenu du message</li>
+          </ul>
+
+          <h3>Données de navigation</h3>
+          <p>Le site ne recourt à aucun outil de suivi publicitaire ou d'analyse comportementale. Seuls des journaux de connexion techniques (logs serveur : adresse IP, date, horodatage, ressource consultée) peuvent être enregistrés par l'hébergeur à des fins de sécurité et de diagnostic.</p>
+        </section>
+
+        <section>
+          <h2><span class="legal-num">04</span> Finalités et bases légales</h2>
+
+          <table class="legal-table">
+            <thead>
+              <tr><th>Finalité</th><th>Base légale</th><th>Durée</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Répondre à une demande de contact ou de devis</td>
+                <td>Mesures précontractuelles à la demande de la personne concernée (art. 6.1.b RGPD)</td>
+                <td>3 ans après le dernier contact</td>
+              </tr>
+              <tr>
+                <td>Gérer la relation client et contractuelle</td>
+                <td>Exécution du contrat (art. 6.1.b RGPD)</td>
+                <td>Durée du contrat + 10 ans (obligations comptables)</td>
+              </tr>
+              <tr>
+                <td>Répondre à une obligation légale (facturation, comptabilité)</td>
+                <td>Obligation légale (art. 6.1.c RGPD)</td>
+                <td>10 ans (art. L.123-22 Code de commerce)</td>
+              </tr>
+              <tr>
+                <td>Sécurité du site et lutte contre la fraude</td>
+                <td>Intérêt légitime (art. 6.1.f RGPD)</td>
+                <td>12 mois maximum</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2><span class="legal-num">05</span> Destinataires</h2>
+          <p>Vos données sont destinées à Noventis Design en sa qualité de responsable de traitement. Elles ne sont <strong>jamais cédées, louées ou vendues</strong> à des tiers à des fins commerciales.</p>
+          <p>Elles peuvent toutefois être transmises à des sous-traitants techniques, strictement nécessaires au fonctionnement du service&nbsp;:</p>
+
+          <table class="legal-table">
+            <thead>
+              <tr><th>Sous-traitant</th><th>Finalité</th><th>Localisation</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>OVH SAS</strong></td>
+                <td>Hébergement du site et de la messagerie</td>
+                <td>France (UE)</td>
+              </tr>
+              <tr>
+                <td><strong>FormSubmit</strong></td>
+                <td>Routage technique des messages du formulaire de contact</td>
+                <td>États-Unis — <em>clauses contractuelles types</em></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Les transferts hors Union européenne, lorsqu'ils ont lieu, sont encadrés par des <strong>clauses contractuelles types</strong> adoptées par la Commission européenne, garantissant un niveau de protection équivalent au droit européen.</p>
+        </section>
+
+        <section>
+          <h2><span class="legal-num">06</span> Cookies</h2>
+
+          <div class="legal-callout">
+            <span class="legal-callout__label">Position</span>
+            <p>Le site noventisdesign.com <strong>n'utilise aucun cookie publicitaire, de mesure d'audience ou de profilage</strong>. Aucun consentement préalable n'est donc requis pour la navigation.</p>
+          </div>
+
+          <p>Seuls des cookies techniques strictement nécessaires au fonctionnement du site et à la sécurité de votre session peuvent être utilisés, conformément à l'article 82 de la loi Informatique et Libertés qui dispense ces cookies de consentement.</p>
+          <p>Vous pouvez à tout moment configurer votre navigateur pour refuser l'ensemble des cookies. Le site restera fonctionnel dans la quasi-totalité de ses usages.</p>
+        </section>
+
+        <section>
+          <h2><span class="legal-num">07</span> Vos droits RGPD</h2>
+          <p>Conformément au RGPD, vous disposez des droits suivants sur vos données personnelles&nbsp;:</p>
+          <ul>
+            <li><strong>Droit d'accès</strong> — obtenir la confirmation que vos données sont traitées et en recevoir une copie ;</li>
+            <li><strong>Droit de rectification</strong> — faire corriger des données inexactes ou incomplètes ;</li>
+            <li><strong>Droit à l'effacement</strong> (« droit à l'oubli ») — demander la suppression de vos données lorsque les conditions légales sont réunies ;</li>
+            <li><strong>Droit à la limitation</strong> — demander la suspension du traitement dans certaines circonstances ;</li>
+            <li><strong>Droit d'opposition</strong> — vous opposer, pour motif légitime, à un traitement fondé sur l'intérêt légitime ;</li>
+            <li><strong>Droit à la portabilité</strong> — recevoir vos données dans un format structuré, couramment utilisé et lisible par machine ;</li>
+            <li><strong>Droit de définir des directives</strong> relatives au sort de vos données après votre décès.</li>
+          </ul>
+
+          <h3>Comment exercer vos droits</h3>
+          <p>Adressez votre demande par e-mail à <a href="mailto:contact@noventisdesign.com">contact@noventisdesign.com</a>, en précisant l'objet de votre demande et en joignant, le cas échéant, une copie d'un titre d'identité si un doute raisonnable subsiste sur votre identité.</p>
+          <p>Une réponse vous sera adressée <strong>dans un délai maximum d'un mois</strong> à compter de la réception de votre demande, prorogeable de deux mois en cas de complexité ou de nombre élevé de demandes.</p>
+        </section>
+
+        <section>
+          <h2><span class="legal-num">08</span> Sécurité</h2>
+          <p>Noventis Design met en œuvre les mesures techniques et organisationnelles appropriées pour protéger vos données contre la perte, l'altération, la divulgation ou l'accès non autorisé&nbsp;:</p>
+          <ul>
+            <li>chiffrement TLS/HTTPS de toutes les communications avec le site ;</li>
+            <li>authentification forte des accès administrateur ;</li>
+            <li>minimisation des données collectées et conservées ;</li>
+            <li>journalisation des accès serveur ;</li>
+            <li>sauvegardes régulières et chiffrées.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><span class="legal-num">09</span> Réclamation</h2>
+          <p>Si vous estimez, après nous avoir contactés, que vos droits en matière de protection des données ne sont pas respectés, vous pouvez introduire une réclamation auprès de la <strong>Commission Nationale de l'Informatique et des Libertés (CNIL)</strong> :</p>
+          <ul>
+            <li>CNIL — 3 place de Fontenoy — TSA 80715 — 75334 Paris Cedex 07</li>
+            <li>Téléphone : 01 53 73 22 22</li>
+            <li>Site : <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><span class="legal-num">10</span> Modifications</h2>
+          <p>La présente politique de confidentialité peut être amenée à évoluer, notamment pour refléter des modifications réglementaires ou l'évolution de nos services. La date de la dernière mise à jour est indiquée en tête du document.</p>
+          <p>En cas de modification substantielle, nous vous en informerons par tout moyen approprié (notification sur le site, e-mail si nécessaire).</p>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__top">
+      <div class="site-footer__brand">
+        <a href="index.html" class="brand" aria-label="Noventis Design">
+          <svg class="logo-svg logo-svg--footer" viewBox="0 0 210 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g transform="translate(2, 4)">
+              <rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="url(#grad-nv)" stroke-width="1.3" opacity="0.95"/>
+              <path d="M 8 23 L 8 9 L 24 23 L 24 9" fill="none" stroke="url(#grad-nv)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M 8 23 L 8 9 L 24 23 L 24 9" fill="none" stroke="url(#grad-silver)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+              <circle cx="28" cy="7" r="1.2" fill="url(#grad-nv)"/>
+            </g>
+            <g transform="translate(44, 0)">
+              <text x="0" y="20" font-family="Space Grotesk, Inter, sans-serif" font-size="17" font-weight="500" letter-spacing="-0.4" fill="url(#grad-silver-wordmark)">Noventis</text>
+              <text x="0" y="20" font-family="Space Grotesk, Inter, sans-serif" font-size="17" font-weight="500" letter-spacing="-0.4" fill="#ffffff" opacity="0.18">Noventis</text>
+              <text x="32" y="33" font-family="Space Grotesk, Inter, sans-serif" font-size="8.5" font-weight="500" letter-spacing="2.2" text-anchor="middle" fill="#a8b0c0" opacity="0.9">design</text>
+            </g>
+          </svg>
+        </a>
+        <p>Studio indépendant de design numérique. Nous fabriquons des sites et identités qui durent.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Pied de page">
+        <div>
+          <h4>Studio</h4>
+          <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#creations">Créations</a></li>
+            <li><a href="index.html#methode">Méthode</a></li>
+            <li><a href="index.html#tarifs">Tarifs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:contact@noventisdesign.com">contact@noventisdesign.com</a></li>
+            <li><a href="tel:+33670020095">06 70 02 00 95</a></li>
+            <li><a href="index.html#contact">Démarrer un projet</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="confidentialite.html">Confidentialité</a></li>
+            <li><a href="cgv.html">CGV</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="wrap site-footer__bottom">
+      <p>&copy; 2026 Noventis Design · Tous droits réservés</p>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+      </ul>
+    </div>
+
+    <div class="site-footer__big" aria-hidden="true">
+      <span data-marquee-slow>Noventis Design &middot; Noventis Design &middot; Noventis Design &middot;</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script type="module" src="js/scene.js"></script>
+</body>
+</html>

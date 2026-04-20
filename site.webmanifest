@@ -1,0 +1,14 @@
+{
+  "name": "Noventis Design",
+  "short_name": "Noventis Design",
+  "description": "Studio de design numérique — sites web, identité visuelle, direction artistique.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "lang": "fr",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

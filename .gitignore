@@ -1,0 +1,36 @@
+# Claude / outils internes
+.claude/
+CLAUDE.md
+settings.local.json
+.playwright-mcp/
+.cursorrules
+SKILLS.md
+
+# Outputs QA / screenshots
+qa-*.png
+*-screenshot.png
+noventis-instagram-profile.png
+
+# Outils internes (générateurs, non référencés par le site)
+assets/images/instagram-profile.html
+assets/images/instagram-profile.svg
+
+# Ressources internes (non destinées au site public)
+flyer/
+templates/
+
+# Artefacts graphify / knowledge graph
+graphify-out/
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Node / outils de build (futur)
+node_modules/
+dist/
+.env
+.env.local
