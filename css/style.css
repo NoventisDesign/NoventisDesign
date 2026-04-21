@@ -1345,7 +1345,12 @@ section {
 .plan--hero::before {
   content: "";
   position: absolute;
-  inset: -1px;
+  /* iOS Safari resolvait mal `inset: -1px` combine avec mask-composite */
+  /* → on explicite la taille via calc(100% + 2px) */
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
   border-radius: inherit;
   padding: 1px;
   background: var(--grad-rich);
