@@ -35,3 +35,9 @@ node_modules/
 dist/
 .env
 .env.local
+
+# Remotion / vidéos
+out/
+remotion/node_modules/
+*.mp4
+*.webm
