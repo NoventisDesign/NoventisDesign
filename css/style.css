@@ -1424,10 +1424,10 @@ section {
   text-transform: uppercase;
 }
 .plan__price-tag {
-  font-size: var(--fs-xs);
+  font-size: var(--fs-sm);
   color: var(--cyan);
   letter-spacing: 0.04em;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 .plan__list {
   display: flex;
@@ -1452,6 +1452,7 @@ section {
   height: 1px;
   background: var(--grad);
 }
+.plan__list li:first-child::before { display: none; }
 
 /* --- Prestations additionnelles (Claude Code-gérables) ----------------- */
 .prestations-head {
