@@ -20,7 +20,7 @@
         font-weight="700"
         font-size="34"
         letter-spacing="8"
-        fill="#0B0D10">NOVA RIDE</text>
+        fill="#F4F6F8">NOVA RIDE</text>
 
   <!-- Tagline -->
   <text x="200" y="228"
@@ -29,6 +29,6 @@
         font-weight="400"
         font-size="11"
         letter-spacing="4"
-        fill="#4B6B88"
-        opacity="0.75">TRANSPORT PRIVÉ</text>
+        fill="#6088AE"
+        opacity="0.9">TRANSPORT PRIVÉ</text>
 </svg>

@@ -1100,6 +1100,17 @@ section {
   justify-content: center;
   overflow: hidden;
 }
+.project__showcase--dark {
+  background: #0B0D10;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.55),
+    0 2px 8px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 0 0 1px rgba(244, 246, 248, 0.06);
+}
+.project__showcase--dark::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent);
+}
 .project__showcase::before {
   content: "";
   position: absolute;
