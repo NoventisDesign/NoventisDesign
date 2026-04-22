@@ -1238,9 +1238,16 @@ section {
 .project__meta {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-start;
   gap: var(--space-4);
   padding: 0 4px;
+}
+.project__desc {
+  margin-top: 10px;
+  color: var(--argent-mute);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  max-width: 56ch;
 }
 .project__meta h3 {
   font-family: var(--font-display);
