@@ -1,0 +1,68 @@
+# Noventis Design
+
+> Agence web basée à Nice (France). Création de sites internet vitrine, sites pour artisans et PME, identité visuelle et direction artistique. Interventions sur Nice, Monaco, Alpes-Maritimes, Var et toute la France.
+
+## À propos
+
+- **Nom** : Noventis Design
+- **Type** : Agence web / Studio de design numérique
+- **Fondateur** : Yazid Lekbiri
+- **Année de création** : Avril 2026
+- **Localisation** : 5 rue Chanoine Rance-Bourrey, 06100 Nice, France
+- **Zone d'intervention** : Nice, Monaco, Alpes-Maritimes, Var, toute la France
+- **Horaires** : Lundi-Vendredi, 9h-18h
+- **Langues** : Français, Anglais
+
+## Contact
+
+- **Site web** : https://noventisdesign.com/
+- **Email** : contact@noventisdesign.com
+- **Téléphone** : +33 6 70 02 00 95
+- **Instagram** : https://www.instagram.com/noventisdesign/
+- **Facebook** : https://www.facebook.com/profile.php?id=61567433043857
+
+## Services
+
+- **Création de site vitrine** : sites internet sur mesure pour PME, indépendants et artisans.
+- **Site internet pour artisan** : vitrine professionnelle, prise de contact, référencement local.
+- **Identité visuelle** : logo, palette, typographies, charte graphique complète.
+- **Refonte de site web** : modernisation du design, amélioration des performances et du référencement sans perte de SEO.
+- **Landing page premium** : pages de conversion pour campagnes, lancements et acquisition.
+- **Maintenance** : sauvegardes, mises à jour de sécurité, petites modifications incluses.
+- **Supports print** : cartes de visite, flyers, dépliants, plaquettes commerciales.
+
+## Tarifs indicatifs
+
+- Site vitrine complet : à partir de 599 €
+- Page simple / landing : 299 € (offre lancement) / 359 € net
+- Portfolio créateur : sur devis
+- Pack complet (site + identité) : dès 669 €
+- Maintenance mensuelle : 35 € / mois
+- Carte de visite : dès 49 €
+- Flyer A5 : dès 69 €
+- Logo : dès 179 €
+
+*TVA non applicable, art. 293 B du CGI (franchise en base de TVA) — les prix affichés sont les prix finaux.*
+
+## Pages principales
+
+- [Accueil](https://noventisdesign.com/) : services, créations, méthode, tarifs, contact
+- [Mentions légales](https://noventisdesign.com/mentions-legales.html)
+- [Conditions générales de vente](https://noventisdesign.com/cgv.html)
+- [Politique de confidentialité](https://noventisdesign.com/confidentialite.html)
+
+## Projets réalisés
+
+- **LegrandGroup** (2026) — Site vitrine + identité visuelle. https://www.legrandgroupmanagement.com
+- **Studio Kairos** (2026) — Landing page + logo.
+
+## Méthode
+
+1. **Découverte** (30 min) — Appel pour comprendre l'activité, les envies, les contraintes.
+2. **Direction** (3 jours) — Moodboards, palette, typographie. Univers défini avant tout dessin d'interface.
+3. **Création** (1-2 semaines) — Design Figma validé, puis intégration : animations, responsive, tests mobile réels.
+4. **Lancement** (1 jour) — Mise en ligne, formation à la prise en main, remise des fichiers sources.
+
+## Positionnement
+
+Noventis Design est une agence indépendante. Rien n'est sous-traité : de la première esquisse à la mise en ligne, c'est le même studio qui garde la main. Priorité au détail, au soin graphique et à la rapidité d'exécution.
