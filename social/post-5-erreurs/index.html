@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Carrousel — 5 erreurs qui font fuir vos clients · Noventis Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F0E8;
+  --bg-2:#EBE6DC;
+  --ink:#0E0F1A;
+  --ink-soft:#3A3D4A;
+  --muted:#7C7E89;
+  --line:rgba(14,15,26,0.10);
+  --line-soft:rgba(14,15,26,0.06);
+  --grad:linear-gradient(135deg,#6c3de8,#8b5fff 50%,#00d4ff);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{background:#1a1a1f;color:#fff;font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+.help{
+  max-width:1080px;margin:32px auto 12px;padding:18px 22px;
+  background:#26272e;border:1px solid #34353d;border-radius:12px;
+  font-size:14px;line-height:1.55;
+}
+.help h2{font-family:'Space Grotesk';font-weight:500;font-size:18px;margin-bottom:8px;letter-spacing:-0.01em;}
+.help code{background:#1a1a1f;padding:2px 6px;border-radius:4px;font-size:13px;}
+.help p{color:#a8aab3;margin:6px 0;}
+.stage{padding:32px 0 80px;display:flex;flex-direction:column;align-items:center;gap:32px;}
+
+/* Slide canvas — exactement 1080x1080 */
+.slide{
+  width:1080px;height:1080px;
+  background:var(--bg);
+  color:var(--ink);
+  position:relative;
+  display:flex;flex-direction:column;
+  padding:80px;
+  font-family:'Inter',sans-serif;
+  overflow:hidden;
+  box-shadow:0 30px 80px -30px rgba(0,0,0,0.7);
+}
+
+/* Subtle paper grain */
+.slide::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(60% 50% at 80% 0%, rgba(108,61,232,0.04), transparent 60%),
+    radial-gradient(50% 40% at 0% 100%, rgba(0,212,255,0.04), transparent 60%);
+  pointer-events:none;
+}
+
+/* Top bar — brand + eyebrow */
+.top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2;}
+.brand{display:inline-flex;align-items:center;gap:14px;}
+.brand svg{display:block;}
+.brand-text{display:flex;flex-direction:column;line-height:1;}
+.brand-name{font-family:'Space Grotesk';font-weight:500;font-size:22px;letter-spacing:-0.02em;color:var(--ink);}
+.brand-sub{font-family:'Space Grotesk';font-weight:500;font-size:10px;letter-spacing:0.32em;color:var(--muted);margin-top:6px;text-transform:uppercase;}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Space Grotesk';font-weight:500;font-size:11px;
+  letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);
+}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--muted);}
+
+/* Bottom bar */
+.bot{
+  display:flex;justify-content:space-between;align-items:center;
+  position:relative;z-index:2;
+  padding-top:28px;border-top:1px solid var(--line-soft);
+  font-family:'Space Grotesk';font-size:13px;letter-spacing:0.04em;color:var(--ink-soft);
+}
+.bot-page{font-weight:500;}
+.bot-url{color:var(--muted);letter-spacing:0.06em;}
+
+/* Body content */
+.body{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;padding:24px 0;}
+
+/* — Slide 1 (Title) — */
+.s1 .body{justify-content:center;}
+.s1 .label{
+  font-family:'Space Grotesk';font-weight:500;font-size:13px;
+  letter-spacing:0.32em;color:#6c3de8;text-transform:uppercase;
+  margin-bottom:32px;
+}
+.s1 .big{
+  font-family:'Space Grotesk';font-weight:500;
+  font-size:280px;line-height:0.85;letter-spacing:-0.04em;
+  color:var(--ink);
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:0;
+}
+.s1 h1{
+  font-family:'Space Grotesk';font-weight:500;
+  font-size:74px;line-height:1.05;letter-spacing:-0.025em;
+  color:var(--ink);
+  margin-top:24px;
+  overflow-wrap:break-word;
+}
+.s1 .sub{
+  font-family:'Inter';font-weight:400;
+  font-size:28px;line-height:1.4;color:var(--ink-soft);
+  margin-top:32px;max-width:32ch;
+  overflow-wrap:break-word;
+}
+.s1 .swipe{
+  margin-top:48px;
+  display:inline-flex;align-items:center;gap:14px;
+  font-family:'Space Grotesk';font-weight:500;font-size:15px;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);
+}
+.s1 .swipe-arrow{
+  width:48px;height:1px;background:var(--ink);position:relative;
+}
+.s1 .swipe-arrow::after{
+  content:"";position:absolute;right:-1px;top:-5px;
+  width:11px;height:11px;border-right:1px solid var(--ink);border-top:1px solid var(--ink);
+  transform:rotate(45deg);
+}
+
+/* — Error slides — */
+.err .body{
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+}
+.err-num{
+  font-family:'Space Grotesk';font-weight:500;
+  font-size:220px;line-height:0.85;letter-spacing:-0.04em;
+  color:transparent;
+  -webkit-text-stroke:2px var(--ink);
+  text-stroke:2px var(--ink);
+  margin-bottom:36px;
+  display:block;
+}
+.err h2{
+  font-family:'Space Grotesk';font-weight:500;
+  font-size:54px;line-height:1.08;letter-spacing:-0.022em;
+  color:var(--ink);
+  margin-bottom:28px;
+  overflow-wrap:break-word;
+}
+.err p{
+  font-family:'Inter';font-weight:400;
+  font-size:22px;line-height:1.55;color:var(--ink-soft);
+  overflow-wrap:break-word;
+}
+.err-illu{
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.err-frame{
+  width:100%;aspect-ratio:1;max-width:380px;
+  background:#fff;border:1px solid var(--line);border-radius:24px;
+  box-shadow:0 20px 50px -20px rgba(14,15,26,0.18);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.err-frame::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:32px;
+  background:#fafafa;border-bottom:1px solid var(--line-soft);
+}
+.err-frame::after{
+  content:"";position:absolute;top:11px;left:14px;
+  width:8px;height:8px;border-radius:50%;background:#e8e8eb;
+  box-shadow:14px 0 0 #e8e8eb,28px 0 0 #e8e8eb;
+}
+
+/* — Final CTA slide — */
+.cta .body{justify-content:center;}
+.cta .label{
+  font-family:'Space Grotesk';font-weight:500;font-size:13px;
+  letter-spacing:0.32em;color:#6c3de8;text-transform:uppercase;
+  margin-bottom:36px;
+}
+.cta h2{
+  font-family:'Space Grotesk';font-weight:500;
+  font-size:96px;line-height:0.98;letter-spacing:-0.03em;
+  color:var(--ink);
+  margin-bottom:6px;
+  overflow-wrap:break-word;
+}
+.cta h2 em{
+  font-style:normal;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.cta .free{
+  font-family:'Space Grotesk';font-weight:500;
+  font-size:96px;line-height:1.05;letter-spacing:-0.025em;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:40px;
+  overflow-wrap:break-word;
+  padding:6px 0 10px 4px;
+  display:inline-block;
+}
+.cta-box{
+  display:flex;align-items:center;gap:24px;
+  padding:28px 32px;
+  background:#fff;border:1px solid var(--line);
+  border-radius:18px;
+  max-width:640px;
+}
+.cta-box-tag{
+  font-family:'Space Grotesk';font-weight:600;font-size:18px;letter-spacing:0.04em;
+  color:#fff;background:var(--ink);
+  padding:10px 16px;border-radius:8px;
+  flex-shrink:0;
+}
+.cta-box-text{
+  font-family:'Inter';font-weight:400;font-size:20px;line-height:1.4;color:var(--ink);
+}
+.cta-box-text strong{font-weight:600;}
+.cta .later{
+  margin-top:36px;
+  font-family:'Inter';font-weight:400;font-size:18px;color:var(--muted);
+  max-width:42ch;
+}
+
+/* Print/screenshot helper */
+@media print {
+  body{background:#fff;}
+  .help{display:none;}
+  .stage{padding:0;gap:0;}
+  .slide{box-shadow:none;page-break-after:always;}
+}
+</style>
+</head>
+<body>
+
+<div class="help">
+  <h2>Carrousel — 5 erreurs qui font fuir vos clients</h2>
+  <p>7 slides à 1080×1080 (Instagram / Facebook / TikTok). Pour exporter chaque slide :</p>
+  <p>• <strong>Capture d'écran</strong> Windows : <code>Win + Shift + S</code> sur chaque slide ;</p>
+  <p>• Ou <strong>impression PDF</strong> : <code>Ctrl + P</code> → « Enregistrer au format PDF » → 1 page = 1 slide.</p>
+  <p>• Ou ouvrir le fichier dans Figma / Photoshop pour export PNG haute qualité.</p>
+</div>
+
+<div class="stage">
+
+  <!-- ============ SLIDE 1 — TITRE ============ -->
+  <div class="slide s1">
+    <div class="top">
+      <div class="brand">
+        <svg width="44" height="44" viewBox="0 0 44 44">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#6c3de8"/>
+              <stop offset="50%" stop-color="#8b5fff"/>
+              <stop offset="100%" stop-color="#00d4ff"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="40" height="40" rx="10" fill="none" stroke="url(#g1)" stroke-width="1.6"/>
+          <path d="M 12 32 L 12 12 L 32 32 L 32 12" fill="none" stroke="url(#g1)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="36" cy="9" r="1.6" fill="url(#g1)"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">Noventis</span>
+          <span class="brand-sub">design</span>
+        </div>
+      </div>
+      <span class="eyebrow">Diagnostic site web</span>
+    </div>
+    <div class="body">
+      <div class="label">Pour artisans · indépendants · commerces</div>
+      <div class="big">5</div>
+      <h1>erreurs qui font fuir<br>vos clients</h1>
+      <p class="sub">…dès la page d'accueil. Et comment les détecter en 30 secondes.</p>
+      <div class="swipe"><span class="swipe-arrow"></span> Faites défiler</div>
+    </div>
+    <div class="bot">
+      <span class="bot-page">01 · 07</span>
+      <span class="bot-url">noventisdesign.com</span>
+    </div>
+  </div>
+
+  <!-- ============ SLIDE 2 — ERREUR 01 ============ -->
+  <div class="slide err">
+    <div class="top">
+      <div class="brand">
+        <svg width="44" height="44" viewBox="0 0 44 44">
+          <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6c3de8"/><stop offset="50%" stop-color="#8b5fff"/><stop offset="100%" stop-color="#00d4ff"/></linearGradient></defs>
+          <rect x="2" y="2" width="40" height="40" rx="10" fill="none" stroke="url(#g2)" stroke-width="1.6"/>
+          <path d="M 12 32 L 12 12 L 32 32 L 32 12" fill="none" stroke="url(#g2)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="36" cy="9" r="1.6" fill="url(#g2)"/>
+        </svg>
+        <div class="brand-text"><span class="brand-name">Noventis</span><span class="brand-sub">design</span></div>
+      </div>
+      <span class="eyebrow">Erreur 01 · Navigation</span>
+    </div>
+    <div class="body">
+      <div>
+        <span class="err-num">01</span>
+        <h2>Un menu confus</h2>
+        <p>Trop d'options, mauvaise hiérarchie. Le visiteur hésite, ne trouve pas — et s'en va.</p>
+      </div>
+      <div class="err-illu">
+        <div class="err-frame">
+          <svg width="280" height="280" viewBox="0 0 280 280">
+            <!-- Disorganized menu items -->
+            <rect x="40" y="80" width="60" height="14" rx="3" fill="#e2e2e6"/>
+            <rect x="115" y="80" width="92" height="14" rx="3" fill="#e2e2e6"/>
+            <rect x="130" y="110" width="46" height="14" rx="3" fill="#d8d8de"/>
+            <rect x="60" y="140" width="120" height="14" rx="3" fill="#e2e2e6"/>
+            <rect x="190" y="140" width="38" height="14" rx="3" fill="#d8d8de"/>
+            <rect x="80" y="170" width="74" height="14" rx="3" fill="#e2e2e6"/>
+            <rect x="50" y="200" width="56" height="14" rx="3" fill="#d8d8de"/>
+            <rect x="120" y="200" width="100" height="14" rx="3" fill="#e2e2e6"/>
+            <!-- Question mark -->
+            <circle cx="226" cy="222" r="22" fill="none" stroke="#6c3de8" stroke-width="2"/>
+            <text x="226" y="232" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="24" fill="#6c3de8">?</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="bot"><span class="bot-page">02 · 07</span><span class="bot-url">noventisdesign.com</span></div>
+  </div>
+
+  <!-- ============ SLIDE 3 — ERREUR 02 ============ -->
+  <div class="slide err">
+    <div class="top">
+      <div class="brand">
+        <svg width="44" height="44" viewBox="0 0 44 44">
+          <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6c3de8"/><stop offset="50%" stop-color="#8b5fff"/><stop offset="100%" stop-color="#00d4ff"/></linearGradient></defs>
+          <rect x="2" y="2" width="40" height="40" rx="10" fill="none" stroke="url(#g3)" stroke-width="1.6"/>
+          <path d="M 12 32 L 12 12 L 32 32 L 32 12" fill="none" stroke="url(#g3)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="36" cy="9" r="1.6" fill="url(#g3)"/>
+        </svg>
+        <div class="brand-text"><span class="brand-name">Noventis</span><span class="brand-sub">design</span></div>
+      </div>
+      <span class="eyebrow">Erreur 02 · Contact</span>
+    </div>
+    <div class="body">
+      <div>
+        <span class="err-num">02</span>
+        <h2>Aucun numéro visible en 3 secondes</h2>
+        <p>Le visiteur veut appeler. S'il doit chercher, il abandonne. Et il appelle votre concurrent.</p>
+      </div>
+      <div class="err-illu">
+        <div class="err-frame">
+          <svg width="280" height="280" viewBox="0 0 280 280">
+            <!-- Phone outline -->
+            <g transform="translate(140,140)">
+              <path d="M -45 -25 L -28 -42 C -23 -47 -15 -47 -10 -42 L -2 -34 C 3 -29 3 -21 -2 -16 L -8 -10 C -10 -8 -10 -4 -8 -2 L 18 24 C 20 26 24 26 26 24 L 32 18 C 37 13 45 13 50 18 L 58 26 C 63 31 63 39 58 44 L 41 61 C 36 66 28 66 24 64 C -1 53 -53 1 -64 -24 C -66 -28 -66 -36 -45 -25 Z" fill="none" stroke="#0E0F1A" stroke-width="2.4" stroke-linejoin="round"/>
+            </g>
+            <!-- Question mark badge -->
+            <circle cx="210" cy="80" r="32" fill="#fff" stroke="#6c3de8" stroke-width="2.4"/>
+            <text x="210" y="93" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="36" fill="#6c3de8">?</text>
+            <!-- Search lines -->
+            <line x1="60" y1="220" x2="120" y2="220" stroke="#d8d8de" stroke-width="2.4" stroke-linecap="round"/>
+            <line x1="60" y1="240" x2="200" y2="240" stroke="#d8d8de" stroke-width="2.4" stroke-linecap="round"/>
+            <line x1="60" y1="260" x2="160" y2="260" stroke="#d8d8de" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="bot"><span class="bot-page">03 · 07</span><span class="bot-url">noventisdesign.com</span></div>
+  </div>
+
+  <!-- ============ SLIDE 4 — ERREUR 03 ============ -->
+  <div class="slide err">
+    <div class="top">
+      <div class="brand">
+        <svg width="44" height="44" viewBox="0 0 44 44">
+          <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6c3de8"/><stop offset="50%" stop-color="#8b5fff"/><stop offset="100%" stop-color="#00d4ff"/></linearGradient></defs>
+          <rect x="2" y="2" width="40" height="40" rx="10" fill="none" stroke="url(#g4)" stroke-width="1.6"/>
+          <path d="M 12 32 L 12 12 L 32 32 L 32 12" fill="none" stroke="url(#g4)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="36" cy="9" r="1.6" fill="url(#g4)"/>
+        </svg>
+        <div class="brand-text"><span class="brand-name">Noventis</span><span class="brand-sub">design</span></div>
+      </div>
+      <span class="eyebrow">Erreur 03 · Identité</span>
+    </div>
+    <div class="body">
+      <div>
+        <span class="err-num">03</span>
+        <h2>Des photos de banque d'images</h2>
+        <p>Visages génériques, ambiances factices. Le visiteur le sent immédiatement. La confiance s'effondre.</p>
+      </div>
+      <div class="err-illu">
+        <div class="err-frame">
+          <svg width="280" height="280" viewBox="0 0 280 280">
+            <!-- Generic image placeholder -->
+            <rect x="50" y="50" width="180" height="140" rx="8" fill="#ECECEF" stroke="#d8d8de" stroke-width="2"/>
+            <!-- Mountain placeholder -->
+            <path d="M 50 170 L 100 110 L 140 150 L 180 100 L 230 170 Z" fill="#d8d8de"/>
+            <!-- Sun -->
+            <circle cx="180" cy="80" r="14" fill="#d8d8de"/>
+            <!-- Stock label -->
+            <g transform="translate(140,225)">
+              <rect x="-50" y="-12" width="100" height="24" rx="12" fill="#fff" stroke="#6c3de8" stroke-width="1.6"/>
+              <text x="0" y="5" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="11" letter-spacing="2.4" fill="#6c3de8">STOCK</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="bot"><span class="bot-page">04 · 07</span><span class="bot-url">noventisdesign.com</span></div>
+  </div>
+
+  <!-- ============ SLIDE 5 — ERREUR 04 ============ -->
+  <div class="slide err">
+    <div class="top">
+      <div class="brand">
+        <svg width="44" height="44" viewBox="0 0 44 44">
+          <defs><linearGradient id="g5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6c3de8"/><stop offset="50%" stop-color="#8b5fff"/><stop offset="100%" stop-color="#00d4ff"/></linearGradient></defs>
+          <rect x="2" y="2" width="40" height="40" rx="10" fill="none" stroke="url(#g5)" stroke-width="1.6"/>
+          <path d="M 12 32 L 12 12 L 32 32 L 32 12" fill="none" stroke="url(#g5)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="36" cy="9" r="1.6" fill="url(#g5)"/>
+        </svg>
+        <div class="brand-text"><span class="brand-name">Noventis</span><span class="brand-sub">design</span></div>
+      </div>
+      <span class="eyebrow">Erreur 04 · Performance</span>
+    </div>
+    <div class="body">
+      <div>
+        <span class="err-num">04</span>
+        <h2>Plus de 3 secondes pour charger</h2>
+        <p>Sur mobile, 53 % des visiteurs partent passé ce délai. Avant même d'avoir vu votre offre.</p>
+      </div>
+      <div class="err-illu">
+        <div class="err-frame">
+          <svg width="280" height="280" viewBox="0 0 280 280">
+            <!-- Stopwatch -->
+            <g transform="translate(140,150)">
+              <!-- Top button -->
+              <rect x="-10" y="-78" width="20" height="10" rx="2" fill="#0E0F1A"/>
+              <line x1="-22" y1="-72" x2="-12" y2="-62" stroke="#0E0F1A" stroke-width="2.4" stroke-linecap="round"/>
+              <line x1="22" y1="-72" x2="12" y2="-62" stroke="#0E0F1A" stroke-width="2.4" stroke-linecap="round"/>
+              <!-- Watch body -->
+              <circle r="62" fill="#fff" stroke="#0E0F1A" stroke-width="2.6"/>
+              <!-- Tick marks -->
+              <line x1="0" y1="-58" x2="0" y2="-50" stroke="#0E0F1A" stroke-width="2"/>
+              <line x1="0" y1="58" x2="0" y2="50" stroke="#0E0F1A" stroke-width="2"/>
+              <line x1="-58" y1="0" x2="-50" y2="0" stroke="#0E0F1A" stroke-width="2"/>
+              <line x1="58" y1="0" x2="50" y2="0" stroke="#0E0F1A" stroke-width="2"/>
+              <!-- Hand pointing past 3 -->
+              <line x1="0" y1="0" x2="46" y2="-26" stroke="#6c3de8" stroke-width="3" stroke-linecap="round"/>
+              <circle r="4" fill="#0E0F1A"/>
+              <!-- 3s label -->
+              <text x="0" y="78" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="14" letter-spacing="2" fill="#6c3de8">3.0 S +</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="bot"><span class="bot-page">05 · 07</span><span class="bot-url">noventisdesign.com</span></div>
+  </div>
+
+  <!-- ============ SLIDE 6 — ERREUR 05 ============ -->
+  <div class="slide err">
+    <div class="top">
+      <div class="brand">
+        <svg width="44" height="44" viewBox="0 0 44 44">
+          <defs><linearGradient id="g6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6c3de8"/><stop offset="50%" stop-color="#8b5fff"/><stop offset="100%" stop-color="#00d4ff"/></linearGradient></defs>
+          <rect x="2" y="2" width="40" height="40" rx="10" fill="none" stroke="url(#g6)" stroke-width="1.6"/>
+          <path d="M 12 32 L 12 12 L 32 32 L 32 12" fill="none" stroke="url(#g6)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="36" cy="9" r="1.6" fill="url(#g6)"/>
+        </svg>
+        <div class="brand-text"><span class="brand-name">Noventis</span><span class="brand-sub">design</span></div>
+      </div>
+      <span class="eyebrow">Erreur 05 · Conversion</span>
+    </div>
+    <div class="body">
+      <div>
+        <span class="err-num">05</span>
+        <h2>Pas un seul appel à l'action</h2>
+        <p>Pas de bouton clair. Pas de direction. Le visiteur ne sait pas quoi faire ensuite — alors il ne fait rien.</p>
+      </div>
+      <div class="err-illu">
+        <div class="err-frame">
+          <svg width="280" height="280" viewBox="0 0 280 280">
+            <!-- Empty button (dashed) -->
+            <rect x="50" y="115" width="180" height="50" rx="25" fill="none" stroke="#0E0F1A" stroke-width="2.4" stroke-dasharray="6 6"/>
+            <text x="140" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-weight="400" font-size="14" letter-spacing="2" fill="#9c9ea8" font-style="italic">vide</text>
+            <!-- Cursor -->
+            <g transform="translate(180,180)">
+              <path d="M 0 0 L 0 22 L 6 18 L 10 26 L 14 24 L 10 16 L 18 16 Z" fill="#0E0F1A"/>
+            </g>
+            <!-- Lines suggesting context -->
+            <line x1="60" y1="80" x2="220" y2="80" stroke="#d8d8de" stroke-width="3" stroke-linecap="round"/>
+            <line x1="80" y1="95" x2="200" y2="95" stroke="#e2e2e6" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="bot"><span class="bot-page">06 · 07</span><span class="bot-url">noventisdesign.com</span></div>
+  </div>
+
+  <!-- ============ SLIDE 7 — CTA ============ -->
+  <div class="slide cta">
+    <div class="top">
+      <div class="brand">
+        <svg width="44" height="44" viewBox="0 0 44 44">
+          <defs><linearGradient id="g7" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6c3de8"/><stop offset="50%" stop-color="#8b5fff"/><stop offset="100%" stop-color="#00d4ff"/></linearGradient></defs>
+          <rect x="2" y="2" width="40" height="40" rx="10" fill="none" stroke="url(#g7)" stroke-width="1.6"/>
+          <path d="M 12 32 L 12 12 L 32 32 L 32 12" fill="none" stroke="url(#g7)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="36" cy="9" r="1.6" fill="url(#g7)"/>
+        </svg>
+        <div class="brand-text"><span class="brand-name">Noventis</span><span class="brand-sub">design</span></div>
+      </div>
+      <span class="eyebrow">Audit offert</span>
+    </div>
+    <div class="body">
+      <div class="label">Une de ces erreurs sur votre site ?</div>
+      <h2>On audite votre site,</h2>
+      <div class="free">gratuitement.</div>
+      <div class="cta-box">
+        <span class="cta-box-tag">AUDIT</span>
+        <p class="cta-box-text">Commentez <strong>« AUDIT »</strong> sous ce post → on vous répond <strong>en DM dans la journée</strong>.</p>
+      </div>
+      <p class="later">Diagnostic complet · 12 critères · sans engagement. Vous repartez avec un plan d'action concret, même si on ne travaille pas ensemble.</p>
+    </div>
+    <div class="bot">
+      <span class="bot-page">07 · 07</span>
+      <span class="bot-url">noventisdesign.com — Agence web · Nice</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
