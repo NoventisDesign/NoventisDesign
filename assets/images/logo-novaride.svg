@@ -10,7 +10,6 @@
   <g transform="translate(165,60)">
     <rect width="70" height="70" rx="18" fill="url(#nrMarkGrad)"/>
     <rect x="14" y="14" width="42" height="42" rx="8" fill="#0B0D10"/>
-    <circle cx="35" cy="35" r="6" fill="#F4F6F8"/>
   </g>
 
   <!-- Wordmark -->
